@@ -9,7 +9,7 @@ k8sradar scans provider component versions or arbitrary OSV packages and enriche
 Download a release binary or build from source:
 
 ```bash
-go install github.com/abdulmalik/k8sradar/cli/cmd/k8sradar@latest
+go install github.com/saintmalik/k8sradar/cli/cmd/k8sradar@latest
 ```
 
 ## Quick start

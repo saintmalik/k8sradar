@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/abdulmalik/k8sradar/cli/internal/cli"
+	"github.com/saintmalik/k8sradar/cli/internal/cli"
 )
 
 func main() {

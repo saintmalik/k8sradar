@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/abdulmalik/k8sradar/core/input"
-	"github.com/abdulmalik/k8sradar/core/models"
+	"github.com/saintmalik/k8sradar/core/input"
+	"github.com/saintmalik/k8sradar/core/models"
 )
 
 // componentFlagValue is a custom pflag.Value that parses "name=version".

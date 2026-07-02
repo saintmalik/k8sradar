@@ -1,9 +1,9 @@
-module github.com/abdulmalik/k8sradar/cli
+module github.com/saintmalik/k8sradar/cli
 
 go 1.25.0
 
 require (
-	github.com/abdulmalik/k8sradar-core v0.0.0
+	github.com/saintmalik/k8sradar-core v0.0.0
 	github.com/spf13/cobra v1.10.2
 )
 
