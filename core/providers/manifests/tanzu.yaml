@@ -1,0 +1,25 @@
+versions:
+  "1.29":
+    components:
+      kubernetes: "1.29.10"
+      kubelet: "1.29.10"
+      coredns: "v1.11.1"
+      kube-proxy: "1.29.10"
+      etcd: "3.5.16"
+      contour: "v1.29.0"
+  "1.30":
+    components:
+      kubernetes: "1.30.6"
+      kubelet: "1.30.6"
+      coredns: "v1.11.1"
+      kube-proxy: "1.30.6"
+      etcd: "3.5.16"
+      contour: "v1.30.0"
+  "1.31":
+    components:
+      kubernetes: "1.31.2"
+      kubelet: "1.31.2"
+      coredns: "v1.11.3"
+      kube-proxy: "1.31.2"
+      etcd: "3.5.17"
+      contour: "v1.31.0"
