@@ -1,0 +1,14 @@
+# Local sqlite cache (manifests under data/manifests/ are tracked)
+/data/k8sradar.db
+/data/*.db
+/data/*.db-journal
+/data/*.db-wal
+/data/*.db-shm
+/bin/
+tmp/
+
+# The deployed web app is kept separately; only the CLI is published.
+/server/
+/web/
+.go.work.sum
+/cli/k8sradar
