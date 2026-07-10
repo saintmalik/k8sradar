@@ -21,8 +21,11 @@ k8sradar eks --k8s-version 1.31
 # Read a stack from a config file and produce JSON + SARIF
 k8sradar -f stack.yaml -o json,sarif --output-dir ./reports
 
-# Scan arbitrary software assets
+# Scan arbitrary software assets (ecosystem aliases deb→Debian, go→Go)
 k8sradar --asset go/k8s.io/kubernetes@1.31.2 --asset deb/nginx@1.25.3
+
+# Product shorthands for common infra (no K8s provider needed)
+k8sradar --asset openvpn@2.6.12 --asset wireguard@1.0.20210914 -o table,json
 ```
 
 ## Usage
@@ -42,7 +45,7 @@ Provider can be passed as a positional argument (`k8sradar eks`) or via `--provi
 | `-v, --k8s-version` | Kubernetes version |
 | `-n, --node-os` | Node operating system |
 | `-c, --component name=version` | Component override; repeatable |
-| `--asset ecosystem/package@version` | Generic asset; also accepts `pkg:type/name@version`; repeatable |
+| `--asset ecosystem/package@version` | Generic asset; aliases `deb`→Debian, `go`→Go; also `product@version` shorthands like `openvpn@2.6.12`; repeatable |
 | `-f, --config` | YAML/JSON config file; `-` reads stdin |
 | `-o, --output` | Output formats: `table`, `json`, `txt`, `sarif`, `html` (default `table`) |
 | `--output-dir` | Directory for generated report files (default `.`) |
@@ -84,6 +87,23 @@ slack:
 ```
 
 CLI flags override config file values. Assets can be passed without a provider.
+
+### Non-Kubernetes assets
+
+Scan any OSV-tracked package with `ecosystem/package@version`. Common ecosystem aliases work: `deb`, `go`, `npm`, `pypi`, `alpine`, `rpm`.
+
+Product shorthands (no ecosystem prefix):
+
+| Shorthand | What it scans |
+|-----------|----------------|
+| `openvpn@VERSION` | Debian openvpn |
+| `wireguard@VERSION` | Debian wireguard-tools + wireguard-dkms |
+| `nginx@VERSION` | Debian + Alpine nginx |
+| `postgresql@VERSION` | Debian postgresql |
+| `redis@VERSION` | Debian redis-server |
+| `openssl@VERSION` | Debian openssl |
+
+**Slack / Jira Cloud** are SaaS products — OSV does not version them. For Slack we scan the Node SDK (`npm/@slack/web-api`) as a best-effort proxy. For self-hosted Atlassian products, use explicit `--asset deb/PACKAGE@VERSION` if your distro packages them.
 
 ## Report formats
 

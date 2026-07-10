@@ -3,7 +3,7 @@ module github.com/saintmalik/k8sradar/cli
 go 1.25.0
 
 require (
-	github.com/saintmalik/k8sradar-core v0.0.0-20260702071600-5d01c398a2b1
+	github.com/saintmalik/k8sradar-core v0.0.0-20260710171919-37180af0c028
 	github.com/spf13/cobra v1.10.2
 )
 
@@ -14,6 +14,7 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/ncruces/go-strftime v0.1.9 // indirect
+	github.com/pandatix/go-cvss v0.6.2 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/slack-go/slack v0.27.0 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect

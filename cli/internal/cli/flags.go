@@ -60,11 +60,11 @@ func (a *assetFlagValue) String() string {
 }
 
 func (a *assetFlagValue) Set(s string) error {
-	asset, err := input.ParseAssetFlag(s)
+	assets, err := input.ParseAssetFlags(s)
 	if err != nil {
 		return err
 	}
-	*a.values = append(*a.values, asset)
+	*a.values = append(*a.values, assets...)
 	return nil
 }
 
